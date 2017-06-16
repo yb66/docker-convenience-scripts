@@ -37,10 +37,8 @@ then
         exit
 fi
 
-
-
 echo "Creating destination volume \"$2\"..."
-docker volume create --name $2  
+docker volume create --name $2
 echo "Copying data from source volume \"$1\" to destination volume \"$2\"..."
 docker run --rm \
            -i \
