@@ -30,4 +30,4 @@ CURRENT_FOLDER=`pwd`;
 docker run --rm \
   --mount source="$1",target=/usr/data,type=volume \
   --mount source=$CURRENT_FOLDER,target=/usr/backup,type=bind \
-  debian:jessie tar -czvf /usr/backup/"${@:2}" /usr/data/
+  debian:jessie tar -czvf /usr/backup/"${@:2}" -C /usr/data/ .
