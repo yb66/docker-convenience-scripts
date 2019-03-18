@@ -20,4 +20,16 @@ that have a link to this data volume, including the image corresponding to the c
 The script allows me to easily see if there are some data volumes on my disk that are taking
 up a lot of space and are not needed anymore.
 
+## remove-all-services.sh
+
+The purpose of this script is to allow for quickly removing all registered services.
+
+## remove_untagged.sh
+
+The purpose for this script is to remove all un-tagged images.
+
+## remove_unnamed.sh
+
+The purpose for this script is to remove all un-named images.
+
 You can find more details in my blog post [Listing information for all your named/unnamed data volumes](https://www.guidodiepen.nl/2017/04/listing-information-for-all-your-named-unnamed-data-volumes/)
