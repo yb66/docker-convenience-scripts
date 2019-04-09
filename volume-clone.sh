@@ -9,14 +9,14 @@
 #First check if the user provided all needed arguments
 if [ "$1" = "" ]
 then
-        echo "Please provide a source volume name"
-        exit
+  echo "Please provide a source volume name"
+  exit
 fi
 
 if [ "$2" = "" ] 
 then
-        echo "Please provide a destination volume name"
-        exit
+  echo "Please provide a destination volume name"
+  exit
 fi
 
 
@@ -24,8 +24,8 @@ fi
 docker volume inspect $1 > /dev/null 2>&1
 if [ "$?" != "0" ]
 then
-        echo "The source volume \"$1\" does not exist"
-        exit
+  echo "The source volume \"$1\" does not exist"
+  exit
 fi
 
 #Now check if the destinatin volume name does not yet exist
@@ -33,8 +33,8 @@ docker volume inspect $2 > /dev/null 2>&1
 
 if [ "$?" = "0" ]
 then
-        echo "The destination volume \"$2\" already exists"
-        exit
+  echo "The destination volume \"$2\" already exists"
+  exit
 fi
 
 echo "Creating destination volume \"$2\"..."

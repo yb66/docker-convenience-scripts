@@ -2,16 +2,16 @@
 #First check if the user provided all needed arguments
 if [ "$1" = "" ]
 then
-        echo "Please provide a source volume name"
-        echo "Usage: docker_export_volume {source volume} {export file name}."
-        exit
+  echo "Please provide a source volume name"
+  echo "Usage: docker_export_volume {source volume} {export file name}."
+  exit
 fi
 
 if [ "$2" = "" ]
 then
-        echo "Please provide a destination file name"
-        echo "Usage: docker_export_volume {source volume} {export file name}."
-        exit
+  echo "Please provide a destination file name"
+  echo "Usage: docker_export_volume {source volume} {export file name}."
+  exit
 fi
 
 
@@ -19,8 +19,8 @@ fi
 docker volume inspect $1 > /dev/null 2>&1
 if [ "$?" != "0" ]
 then
-        echo "The source volume \"$1\" does not exist"
-        exit
+  echo "The source volume \"$1\" does not exist"
+  exit
 fi
 
 echo "Copying data from source volume \"$1\" to destination file \"$2\" in the current folder..."

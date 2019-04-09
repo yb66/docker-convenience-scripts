@@ -2,9 +2,9 @@
 #First check if the user provided all needed arguments
 if [ "$1" = "" ]
 then
-        echo "Please provide a source file name."
-        echo "Usage: docker_import_volume {source file} {target volume name}."
-        exit
+  echo "Please provide a source file name."
+  echo "Usage: docker_import_volume {source file} {target volume name}."
+  exit
 fi
 
 # Work out the source file
@@ -19,9 +19,9 @@ fi
 
 if [ "$2" = "" ]
 then
-        echo "Please provide a target volume name, if not exist the volume will be created."
-        echo "Usage: docker_import_volume {source file} {target volume name}."
-        exit
+  echo "Please provide a target volume name, if not exist the volume will be created."
+  echo "Usage: docker_import_volume {source file} {target volume name}."
+  exit
 fi
 
 
@@ -29,8 +29,8 @@ fi
 docker volume inspect $2 > /dev/null 2>&1
 if [ "$?" != "0" ]
 then
-        echo "The target volume \"$2\" does not exist, creating it."
-        docker volume create --name $2
+  echo "The target volume \"$2\" does not exist, creating it."
+  docker volume create --name $2
 fi
 
 echo "Copying data from source file [$FILE] in the [$WORK_FOLDER] to target volume [$2]..."
